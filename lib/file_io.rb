@@ -11,7 +11,4 @@ class FileIO
     parse = JSON.parse(c)
     puts "Uploaded #{@file} to https://file.io/" << parse["key"]
   end
-  def file_getter
-    return @file
-  end
 end
