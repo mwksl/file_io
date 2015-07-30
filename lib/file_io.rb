@@ -11,4 +11,10 @@ class FileIO
     parse = JSON.parse(c)
     puts "Uploaded #{@file} to https://file.io/" << parse["key"]
   end
+  def expire(time)
+    c = RestClient.post("https://file.io/?expires=#{time}", :file => File.new(@file, "rb"))
+    parse = JSON.parse(c)
+    puts "Uploaded #{@file} to https://file.io/" << parse["key"] << 
+    " it will expire in " << parse["expiry"] << "."
+  end
 end

@@ -13,6 +13,15 @@ file = FileIO.new('stannis.txt')
 file.upload
 ```
 
+Upload a file with an expiration date
+```language-ruby
+require 'file_io'
+
+file = FileIO.new('stannis.txt')
+file.expire("1w")
+```
+
+
 Easy!
 
 [gems]:https://rubygems.org/gems/file_io
